@@ -1,0 +1,24 @@
+{
+    "name": "emptynick/voyager-tiptap",
+    "description": "Tiptap WYSIWYG editor for Voyager 2",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christoph Schweppe",
+            "email": "info@cschweppe.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Emptynick\\Tiptap\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Emptynick\\Tiptap\\TiptapServiceProvider"
+            ]
+        }
+    }
+}
