@@ -5,9 +5,10 @@ namespace Emptynick\Tiptap;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
-use Voyager\Admin\Contracts\Plugins\ThemePlugin;
+use Voyager\Admin\Classes\Formfield;
+use Voyager\Admin\Contracts\Plugins\FormfieldPlugin;
 
-class Tiptap implements ThemePlugin
+class Tiptap implements FormfieldPlugin
 {
     public $name = 'Tiptap';
     public $description = 'Tiptap WYSIWYG editor for Voyager 2';
@@ -53,5 +54,10 @@ class Tiptap implements ThemePlugin
         return [
             route('voyager-tiptap')
         ];
+    }
+
+    public function getFormfield(): Formfield
+    {
+        return new TiptapFormfield();
     }
 }
