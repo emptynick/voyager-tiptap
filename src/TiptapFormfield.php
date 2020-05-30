@@ -18,11 +18,30 @@ class TiptapFormfield extends Formfield
 
     public function listOptions(): array
     {
-        return [];
+        return [
+            'display_length'    => 50,
+        ];
     }
 
     public function viewOptions(): array
     {
-        return [];
+        return [
+            'as_json'       => false,
+            'ul'            => true,
+            'heading'       => true,
+            'hr'            => true,
+            'ol'            => true,
+            'bold'          => true,
+            'code'          => true,
+            'italic'        => true,
+            'strike'        => true,
+            'underline'     => true,
+            'history'       => true,
+        ];
+    }
+
+    public function browse($input)
+    {
+        return strip_tags($input);
     }
 }
