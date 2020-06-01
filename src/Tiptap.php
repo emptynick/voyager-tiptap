@@ -11,7 +11,7 @@ use Voyager\Admin\Contracts\Plugins\FormfieldPlugin;
 class Tiptap implements FormfieldPlugin
 {
     public $name = 'Tiptap';
-    public $description = 'Tiptap WYSIWYG editor for Voyager 2';
+    public $description = 'Tiptap WYSIWYG editor for Voyager II';
     public $repository = 'emptynick/voyager-tiptap';
     public $website = 'https://github.com/emptynick/voyager-tiptap';
     public $version = '1.0.0';
