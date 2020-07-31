@@ -5,6 +5,7 @@ namespace Emptynick\Tiptap;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
+use Voyager\Admin\Facades\Voyager;
 use Voyager\Admin\Classes\Formfield;
 use Voyager\Admin\Contracts\Plugins\FormfieldPlugin;
 
@@ -52,7 +53,7 @@ class Tiptap implements FormfieldPlugin
     public function getJsRoutes(): array
     {
         return [
-            route('voyager-tiptap')
+            Voyager::route('voyager-tiptap')
         ];
     }
 
