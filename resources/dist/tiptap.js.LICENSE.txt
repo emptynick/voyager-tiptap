@@ -1,23 +1,23 @@
 /*!
-    * tiptap v1.27.0
-    * (c) 2020 Scrumpy UG (limited liability)
+    * tiptap v1.29.4
+    * (c) 2020 überdosis GbR (limited liability)
     * @license MIT
     */
 
 /*!
-    * tiptap-commands v1.13.0
-    * (c) 2020 Scrumpy UG (limited liability)
+    * tiptap-commands v1.14.4
+    * (c) 2020 überdosis GbR (limited liability)
     * @license MIT
     */
 
 /*!
-    * tiptap-extensions v1.29.0
-    * (c) 2020 Scrumpy UG (limited liability)
+    * tiptap-extensions v1.32.3
+    * (c) 2020 überdosis GbR (limited liability)
     * @license MIT
     */
 
 /*!
-    * tiptap-utils v1.9.0
+    * tiptap-utils v1.10.0
     * (c) 2020 Scrumpy UG (limited liability)
     * @license MIT
     */
