@@ -16,17 +16,7 @@ class Tiptap implements FormfieldPlugin
     public $website = 'https://github.com/emptynick/voyager-tiptap';
     public $version = '1.0.0';
 
-    public function getInstructionsView(): ?View
-    {
-        return null;
-    }
-
-    public function registerProtectedRoutes()
-    {
-        //
-    }
-
-    public function registerPublicRoutes()
+    public function providePublicRoutes(): void
     {
         Route::get('tiptap.js', function () {
             $path = realpath(dirname(__DIR__, 1).'/resources/dist/tiptap.js');
@@ -39,21 +29,9 @@ class Tiptap implements FormfieldPlugin
         })->name('voyager-tiptap');
     }
 
-    public function getSettingsView(): ?View
+    public function provideJS(): string
     {
-        return null;
-    }
-
-    public function getCssRoutes(): array
-    {
-        return [];
-    }
-
-    public function getJsRoutes(): array
-    {
-        return [
-            route('voyager-tiptap')
-        ];
+        return route('voyager.voyager-tiptap');
     }
 
     public function getFormfield(): Formfield

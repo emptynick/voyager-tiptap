@@ -2,49 +2,46 @@
     <div class="tiptap input cursor-text" @click="editor.focus()">
         <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
             <div class="button-group">
-                <button v-if="bold" class="button font-bold small icon-only" :class="[isActive.bold() ? 'dark-gray' : 'accent']" @click="commands.bold" v-tooltip="__('voyager::wysiwyg.bold')">
+                <button v-if="bold" class="button font-bold small icon-only" :class="[isActive.bold() ? 'accent' : null]" @click="commands.bold" v-tooltip="__('voyager::tiptap.bold')">
                     B
                 </button>
-                <button v-if="italic" class="button italic small icon-only" :class="[isActive.italic() ? 'dark-gray' : 'accent']" @click="commands.italic" v-tooltip="__('voyager::wysiwyg.italic')">
+                <button v-if="italic" class="button italic small icon-only" :class="[isActive.italic() ? 'accent' : null]" @click="commands.italic" v-tooltip="__('voyager::tiptap.italic')">
                     I
                 </button>
-                <button v-if="strike" class="button line-through small icon-only" :class="[isActive.strike() ? 'dark-gray' : 'accent']" @click="commands.strike" v-tooltip="__('voyager::wysiwyg.strike')">
+                <button v-if="strike" class="button line-through small icon-only" :class="[isActive.strike() ? 'accent' : null]" @click="commands.strike" v-tooltip="__('voyager::tiptap.strike')">
                     S
                 </button>
-                <button v-if="underline" class="button underline small icon-only" :class="[isActive.underline() ? 'dark-gray' : 'accent']" @click="commands.underline" v-tooltip="__('voyager::wysiwyg.underline')">
+                <button v-if="underline" class="button underline small icon-only" :class="[isActive.underline() ? 'accent' : null]" @click="commands.underline" v-tooltip="__('voyager::tiptap.underline')">
                     U
                 </button>
-                <div class="divider"></div>
-                <button v-if="code" class="button small icon-only" :class="[isActive.code() ? 'dark-gray' : 'accent']" @click="commands.code" v-tooltip="__('voyager::wysiwyg.code')">
+                <button v-if="code" class="button small icon-only" :class="[isActive.code() ? 'accent' : null]" @click="commands.code" v-tooltip="__('voyager::tiptap.code')">
                     <icon icon="code" :size="5"></icon>
                 </button>
-                <button class="button small icon-only" :class="[isActive.paragraph() ? 'dark-gray' : 'accent']" @click="commands.paragraph" v-tooltip="__('voyager::wysiwyg.paragraph')">
+                <button class="button small icon-only" :class="[isActive.paragraph() ? 'accent' : null]" @click="commands.paragraph" v-tooltip="__('voyager::tiptap.paragraph')">
                     P
                 </button>
-                <button v-if="ul" class="button small icon-only" :class="[isActive.bullet_list() ? 'dark-gray' : 'accent']" @click="commands.bullet_list" v-tooltip="__('voyager::wysiwyg.bullet_list')">
+                <button v-if="ul" class="button small icon-only" :class="[isActive.bullet_list() ? 'accent' : null]" @click="commands.bullet_list" v-tooltip="__('voyager::tiptap.bullet_list')">
                     UL
                 </button>
-                <button v-if="ol" class="button small icon-only" :class="[isActive.ordered_list() ? 'dark-gray' : 'accent']" @click="commands.ordered_list" v-tooltip="__('voyager::wysiwyg.ordered_list')">
+                <button v-if="ol" class="button small icon-only" :class="[isActive.ordered_list() ? 'accent' : null]" @click="commands.ordered_list" v-tooltip="__('voyager::tiptap.ordered_list')">
                     OL
                 </button>
-                <button v-if="hr" class="button small icon-only" :class="[isActive.horizontal_rule() ? 'dark-gray' : 'accent']" @click="commands.horizontal_rule" v-tooltip="__('voyager::wysiwyg.horizontal_rule')">
+                <button v-if="hr" class="button small icon-only" :class="[isActive.horizontal_rule() ? 'accent' : null]" @click="commands.horizontal_rule" v-tooltip="__('voyager::tiptap.horizontal_rule')">
                     HR
                 </button>
-                <div class="divider"></div>
-                <button v-if="heading" class="button small icon-only" :class="[isActive.heading({ level: 1 }) ? 'dark-gray' : 'accent']" @click="commands.heading({ level: 1 })" v-tooltip="__('voyager::wysiwyg.heading_1')">
+                <button v-if="heading" class="button small icon-only" :class="[isActive.heading({ level: 1 }) ? 'accent' : null]" @click="commands.heading({ level: 1 })" v-tooltip="__('voyager::tiptap.heading_1')">
                     H1
                 </button>
-                <button v-if="heading" class="button small icon-only" :class="[isActive.heading({ level: 2 }) ? 'dark-gray' : 'accent']" @click="commands.heading({ level: 2 })" v-tooltip="__('voyager::wysiwyg.heading_2')">
+                <button v-if="heading" class="button small icon-only" :class="[isActive.heading({ level: 2 }) ? 'accent' : null]" @click="commands.heading({ level: 2 })" v-tooltip="__('voyager::tiptap.heading_2')">
                     H2
                 </button>
-                <button v-if="heading" class="button small icon-only" :class="[isActive.heading({ level: 3 }) ? 'dark-gray' : 'accent']" @click="commands.heading({ level: 3 })" v-tooltip="__('voyager::wysiwyg.heading_3')">
+                <button v-if="heading" class="button small icon-only" :class="[isActive.heading({ level: 3 }) ? 'accent' : null]" @click="commands.heading({ level: 3 })" v-tooltip="__('voyager::tiptap.heading_3')">
                     H3
                 </button>
-                <div class="divider" v-if="heading"></div>
-                <button v-if="history" class="button small icon-only accent" @click="commands.undo" v-tooltip="__('voyager::wysiwyg.undo')">
+                <button v-if="history" class="button small icon-only" @click="commands.undo" v-tooltip="__('voyager::tiptap.undo')">
                     &lt;
                 </button>
-                <button v-if="history" class="button small icon-only accent" @click="commands.redo" v-tooltip="__('voyager::wysiwyg.redo')">
+                <button v-if="history" class="button small icon-only" @click="commands.redo" v-tooltip="__('voyager::tiptap.redo')">
                     &gt;
                 </button>
             </div>
@@ -181,6 +178,10 @@ export default {
     width: 100%;
     &:focus {
         outline: none !important;
+    }
+
+    li > p:first-child {
+        display: inline;
     }
 }
 </style>

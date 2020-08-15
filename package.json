@@ -20,10 +20,10 @@
     "author": "Christoph Schweppe",
     "license": "MIT",
     "dependencies": {
-        "sass": "^1.26.7",
-        "sass-loader": "^8.0.2",
-        "tiptap": "^1.27.1",
-        "tiptap-extensions": "^1.29.1",
+        "sass": "^1.26.10",
+        "sass-loader": "^9.0.3",
+        "tiptap": "^1.29.5",
+        "tiptap-extensions": "^1.32.4",
         "vue": "^2.6.11"
     }
 }
