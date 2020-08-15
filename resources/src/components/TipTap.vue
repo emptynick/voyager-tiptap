@@ -164,15 +164,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .tiptap {
     .content {
         min-height: 16rem;
     }
 }
-</style>
 
-<style lang="scss">
 .ProseMirror {
     height: 100%;
     width: 100%;
