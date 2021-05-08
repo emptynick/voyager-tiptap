@@ -1,6 +1,7 @@
 {
     "name": "emptynick/voyager-tiptap",
     "description": "Tiptap WYSIWYG editor for Voyager II",
+    "keywords": ["voyager2-plugin", "voyager", "tiptap", "wysiwyg"],
     "license": "MIT",
     "authors": [
         {

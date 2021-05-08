@@ -1,29 +1,39 @@
 {
-    "name": "voyager-black-theme",
-    "version": "1.0.0",
-    "description": "An all-black theme for Voyager II",
-    "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-    },
-    "devDependencies": {
-        "cross-env": "^7.0.2",
-        "laravel-mix": "^5.0.4",
-        "vue-template-compiler": "^2.6.11"
-    },
-    "keywords": [],
-    "author": "Christoph Schweppe",
-    "license": "MIT",
-    "dependencies": {
-        "sass": "^1.26.10",
-        "sass-loader": "^9.0.3",
-        "tiptap": "^1.29.5",
-        "tiptap-extensions": "^1.32.4",
-        "vue": "^2.6.11"
-    }
+  "name": "tiptap-vite",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --mode development --watch"
+  },
+  "dependencies": {
+    "@tabler/icons": "^1.41.1",
+    "@tiptap/core": "^2.0.0-beta.53",
+    "@tiptap/extension-blockquote": "^2.0.0-beta.11",
+    "@tiptap/extension-bullet-list": "^2.0.0-beta.11",
+    "@tiptap/extension-character-count": "^2.0.0-beta.10",
+    "@tiptap/extension-code-block": "^2.0.0-beta.13",
+    "@tiptap/extension-document": "^2.0.0-beta.10",
+    "@tiptap/extension-heading": "^2.0.0-beta.11",
+    "@tiptap/extension-history": "^2.0.0-beta.10",
+    "@tiptap/extension-horizontal-rule": "^2.0.0-beta.14",
+    "@tiptap/extension-image": "^2.0.0-beta.11",
+    "@tiptap/extension-list-item": "^2.0.0-beta.11",
+    "@tiptap/extension-ordered-list": "^2.0.0-beta.11",
+    "@tiptap/extension-paragraph": "^2.0.0-beta.12",
+    "@tiptap/extension-task-item": "^2.0.0-beta.13",
+    "@tiptap/extension-task-list": "^2.0.0-beta.13",
+    "@tiptap/extension-text": "^2.0.0-beta.10",
+    "@tiptap/extension-text-align": "^2.0.0-beta.14",
+    "@tiptap/extension-typography": "^2.0.0-beta.10",
+    "@tiptap/extension-underline": "^2.0.0-beta.12",
+    "@tiptap/starter-kit": "^2.0.0-beta.50",
+    "@tiptap/vue-3": "^2.0.0-beta.33",
+    "vue": "^3.0.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/compiler-sfc": "^3.0.11",
+    "sass": "^1.32.12",
+    "vite": "^2.2.4"
+  }
 }

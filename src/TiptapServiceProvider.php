@@ -11,11 +11,12 @@ class TiptapServiceProvider extends ServiceProvider
     public function boot(PluginManager $pluginmanager)
     {
         $pluginmanager->addPlugin(\Emptynick\Tiptap\Tiptap::class);
-        Voyager::addTranslations('tiptap', include(__DIR__.'/../resources/lang.php'));
+        $this->loadTranslationsFrom(realpath(__DIR__.'/../resources/lang'), 'tiptap');
+        Voyager::addTranslations('tiptap', 'tiptap');
     }
 
     public function register()
     {
-        //
+        
     }
 }

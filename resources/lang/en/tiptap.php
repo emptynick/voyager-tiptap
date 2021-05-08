@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'blockquote'        => 'Blockquote',
+    'bubble_menu'       => 'Bubble menu',
+    'bullet_list'       => 'Bullet list',
+    'bold'              => 'Bold',
+    'center'            => 'Center',
+    'character_count'   => ':chars of :max characters',
+    'clear'             => 'Clear',
+    'code'              => 'Code',
+    'code_block'        => 'Code block',
+    'heading'           => 'Heading',
+    'horizontal_rule'   => 'Horizontal rule',
+    'italic'            => 'Italic',
+    'justify'           => 'Justify',
+    'left'              => 'Left',
+    'max_characters'    => 'Max characters (0 = infinite)',
+    'redo'              => 'Redo',
+    'right'             => 'Right',
+    'strike'            => 'Strike',
+    'strong'            => 'Strong',
+    'task_list'         => 'Task list',
+    'text_align'        => 'Text align',
+    'underline'         => 'Underline',
+    'undo'              => 'Undo',
+    'ordered_list'      => 'Ordered list',
+];

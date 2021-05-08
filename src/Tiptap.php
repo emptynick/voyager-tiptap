@@ -11,14 +11,13 @@ use Voyager\Admin\Contracts\Plugins\FormfieldPlugin;
 class Tiptap implements FormfieldPlugin
 {
     public $name = 'Tiptap';
-    public $description = 'Tiptap WYSIWYG editor for Voyager II';
+    public $description = 'Tiptap 2 WYSIWYG editor for Voyager II';
     public $repository = 'emptynick/voyager-tiptap';
     public $website = 'https://github.com/emptynick/voyager-tiptap';
-    public $version = '1.0.0';
 
     public function provideJS(): string
     {
-        return file_get_contents(realpath(dirname(__DIR__, 1).'/resources/dist/tiptap.js'));
+        return file_get_contents(realpath(dirname(__DIR__, 1).'/dist/tiptap.umd.js'));
     }
 
     public function getFormfield(): Formfield

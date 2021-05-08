@@ -2,9 +2,10 @@
 
 namespace Emptynick\Tiptap;
 
-use Voyager\Admin\Classes\Formfield;
+use Voyager\Admin\Contracts\Formfields\Formfield;
+use Voyager\Admin\Contracts\Formfields\Features\ManipulateData\Browse;
 
-class TiptapFormfield extends Formfield
+class TiptapFormfield implements Formfield, Browse
 {
     public function type(): string
     {
@@ -16,32 +17,16 @@ class TiptapFormfield extends Formfield
         return 'Tiptap';
     }
 
-    public function listOptions(): array
-    {
-        return [
-            'display_length'    => 50,
-        ];
-    }
-
-    public function viewOptions(): array
-    {
-        return [
-            'as_json'       => false,
-            'ul'            => true,
-            'heading'       => true,
-            'hr'            => true,
-            'ol'            => true,
-            'bold'          => true,
-            'code'          => true,
-            'italic'        => true,
-            'strike'        => true,
-            'underline'     => true,
-            'history'       => true,
-        ];
-    }
-
     public function browse($input)
     {
-        return strip_tags($input);
+        return substr(strip_tags($input), 0, $this->options->display_length ?? 150);
+    }
+
+    public function getComponentName(): string {
+        return 'tiptap-formfield';
+    }
+
+    public function getBuilderComponentName(): string {
+        return 'tiptap-builder';
     }
 }
