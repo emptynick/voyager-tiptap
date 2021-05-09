@@ -2,10 +2,10 @@
 
 namespace Emptynick\Tiptap;
 
-use Voyager\Admin\Contracts\Formfields\Formfield;
-use Voyager\Admin\Contracts\Formfields\Features\ManipulateData\Browse;
+use Illuminate\Support\Str;
+use Voyager\Admin\Classes\Formfield;
 
-class TiptapFormfield implements Formfield, Browse
+class TiptapFormfield extends Formfield
 {
     public function type(): string
     {
@@ -19,7 +19,7 @@ class TiptapFormfield implements Formfield, Browse
 
     public function browse($input)
     {
-        return substr(strip_tags($input), 0, $this->options->display_length ?? 150);
+        return Str::limit(strip_tags($input), $this->options->display_length ?? 150);
     }
 
     public function getComponentName(): string {

@@ -5,7 +5,7 @@ namespace Emptynick\Tiptap;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
-use Voyager\Admin\Contracts\Formfields\Formfield;
+use Voyager\Admin\Classes\Formfield;
 use Voyager\Admin\Contracts\Plugins\FormfieldPlugin;
 
 class Tiptap implements FormfieldPlugin
