@@ -10,6 +10,7 @@ This is a WYSIWYG editor based on [tiptap 2](https://github.com/ueberdosis/tipta
 - Add autocomplete based on a custom route (allow linking as well?)
 - Add `input` class to ListItem checkbox when tiptap supports it
 - Disabled should really be `disabled`. Tiptap only restricts writing into the editor (not running actions)
+- Let user resize the editor in height
 
 ## Special thanks
 

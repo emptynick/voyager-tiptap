@@ -1,5 +1,5 @@
 <template>
-    <card dont-show-header>
+    <div>
         <div>
             <component
                 :is="bubbleMenu ? 'bubble-menu' : 'div'"
@@ -428,7 +428,7 @@
         <div v-if="editor && maxChars > 0" class="w-full" :class="charPercentage > 90 ? 'text-red-500' : (charPercentage > 75 ? 'text-yellow-500' : null)">
             {{ __('tiptap::tiptap.character_count', { chars: editor.getCharacterCount(), max: maxChars }) }}
         </div>
-    </card>
+    </div>
 </template>
 
 <script>
