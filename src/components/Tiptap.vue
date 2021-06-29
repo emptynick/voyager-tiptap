@@ -11,6 +11,7 @@
                 <button
                     v-if="bold"
                     v-tooltip="__('tiptap::tiptap.bold')"
+                    :aria-label="__('tiptap::tiptap.bold')"
                     @click="editor.chain().focus().toggleBold().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('bold') }"
@@ -24,6 +25,7 @@
             <button
                 v-if="italic"
                 v-tooltip="__('tiptap::tiptap.italic')"
+                :aria-label="__('tiptap::tiptap.italic')"
                 @click="editor.chain().focus().toggleItalic().run()"
                 class="button"
                 :class="{ 'accent': editor.isActive('italic') }"
@@ -38,6 +40,7 @@
                 <button
                     v-if="strike"
                     v-tooltip="__('tiptap::tiptap.strike')"
+                    :aria-label="__('tiptap::tiptap.strike')"
                     @click="editor.chain().focus().toggleStrike().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('strike') }"
@@ -51,6 +54,7 @@
                 <button
                     v-if="underline"
                     v-tooltip="__('tiptap::tiptap.underline')"
+                    :aria-label="__('tiptap::tiptap.underline')"
                     @click="editor.chain().focus().toggleUnderline().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('underline') }"
@@ -64,6 +68,7 @@
                 <button
                     v-if="code"
                     v-tooltip="__('tiptap::tiptap.code')"
+                    :aria-label="__('tiptap::tiptap.code')"
                     @click="editor.chain().focus().toggleCode().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('code') }"
@@ -78,6 +83,7 @@
                 <button
                     v-if="codeBlock"
                     v-tooltip="__('tiptap::tiptap.code_block')"
+                    :aria-label="__('tiptap::tiptap.code_block')"
                     @click="editor.chain().focus().toggleCodeBlock().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('codeBlock') }"
@@ -93,6 +99,7 @@
                 <button
                     v-if="blockquote"
                     v-tooltip="__('tiptap::tiptap.blockquote')"
+                    :aria-label="__('tiptap::tiptap.blockquote')"
                     @click="editor.chain().focus().toggleBlockquote().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('blockquote') }"
@@ -110,6 +117,7 @@
                 <button
                     v-if="bulletList"
                     v-tooltip="__('tiptap::tiptap.bullet_list')"
+                    :aria-label="__('tiptap::tiptap.bullet_list')"
                     @click="editor.chain().focus().toggleBulletList().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('bulletList') }"
@@ -127,6 +135,7 @@
                 <button
                     v-if="orderedList"
                     v-tooltip="__('tiptap::tiptap.ordered_list')"
+                    :aria-label="__('tiptap::tiptap.ordered_list')"
                     @click="editor.chain().focus().toggleOrderedList().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('orderedList') }"
@@ -143,6 +152,7 @@
                 <button
                     v-if="taskList"
                     v-tooltip="__('tiptap::tiptap.task_list')"
+                    :aria-label="__('tiptap::tiptap.task_list')"
                     @click="editor.chain().focus().toggleTaskList().run()"
                     class="button"
                     :class="{ 'accent': editor.isActive('taskList') }"
@@ -159,7 +169,7 @@
                 </button>
 
                 <span v-if="heading">
-                    <button class="button" @click="headingOpen = !headingOpen; alignOpen = false;" :class="{ 'accent': editor.isActive('heading') }" v-tooltip="__('tiptap::tiptap.heading')">
+                    <button class="button" @click="headingOpen = !headingOpen; alignOpen = false;" :class="{ 'accent': editor.isActive('heading') }" v-tooltip="__('tiptap::tiptap.heading')" :aria-label="__('tiptap::tiptap.heading')">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <path d="M7 12h10" />
@@ -176,6 +186,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 1`"
+                                :aria-label="`${__('tiptap::tiptap.header')} 1`"
                                 @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 1 }) }"
                             >
@@ -194,6 +205,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 2`"
+                                :aria-label="`${__('tiptap::tiptap.header')} 2`"
                                 @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 2 }) }"
                             >
@@ -212,6 +224,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 3`"
+                                :aria-label="`${__('tiptap::tiptap.header')} 3`"
                                 @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 3 }) }"
                             >
@@ -231,6 +244,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 4`"
+                                :aria-label="`${__('tiptap::tiptap.header')} 4`"
                                 @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 4 }) }"
                             >
@@ -249,6 +263,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 5`"
+                                :aria-label="`${__('tiptap::tiptap.header')} 5`"
                                 @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 5 }) }"
                             >
@@ -267,6 +282,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 6`"
+                                :aria-label="`${__('tiptap::tiptap.header')} 6`"
                                 @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 6 }) }"
                             >
@@ -288,7 +304,7 @@
                 </span>
 
                 <span v-if="textAlign">
-                    <button class="button" @click="alignOpen = !alignOpen; headingOpen = false" :class="{ 'accent': hasTextAlign }" v-tooltip="__('tiptap::tiptap.text_align')">
+                    <button class="button" @click="alignOpen = !alignOpen; headingOpen = false" :class="{ 'accent': hasTextAlign }" v-tooltip="__('tiptap::tiptap.text_align')" :aria-label="__('tiptap::tiptap.text_align')">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <line x1="4" y1="6" x2="20" y2="6" />
@@ -301,6 +317,7 @@
                             <button
                                 class="button"
                                 v-tooltip="__('tiptap::tiptap.left')"
+                                :aria-label="__('tiptap::tiptap.left')"
                                 @click="editor.chain().focus().setTextAlign('left').run()"
                                 :class="{ 'accent': editor.isActive({ textAlign: 'left' }) }"
                             >
@@ -314,6 +331,7 @@
                             <button
                                 class="button"
                                 v-tooltip="__('tiptap::tiptap.center')"
+                                :aria-label="__('tiptap::tiptap.center')"
                                 @click="editor.chain().focus().setTextAlign('center').run()"
                                 :class="{ 'accent': editor.isActive({ textAlign: 'center' }) }"
                             >
@@ -327,6 +345,7 @@
                             <button
                                 class="button"
                                 v-tooltip="__('tiptap::tiptap.right')"
+                                :aria-label="__('tiptap::tiptap.right')"
                                 @click="editor.chain().focus().setTextAlign('right').run()"
                                 :class="{ 'accent': editor.isActive({ textAlign: 'right' }) }"
                             >
@@ -340,6 +359,7 @@
                             <button
                                 class="button"
                                 v-tooltip="__('tiptap::tiptap.justify')"
+                                :aria-label="__('tiptap::tiptap.justify')"
                                 @click="editor.chain().focus().setTextAlign('justify').run()"
                                 :class="{ 'accent': editor.isActive({ textAlign: 'justify' }) }"
                             >
@@ -353,6 +373,7 @@
                             <button
                                 class="button"
                                 v-tooltip="__('tiptap::tiptap.clear')"
+                                :aria-label="__('tiptap::tiptap.clear')"
                                 @click="editor.chain().focus().unsetTextAlign().run()"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -371,6 +392,7 @@
                 <button
                     v-if="horizontalRule"
                     v-tooltip="__('tiptap::tiptap.horizontal_rule')"
+                    :aria-label="__('tiptap::tiptap.horizontal_rule')"
                     @click="editor.chain().focus().setHorizontalRule().run()"
                     class="button"
                 >
@@ -399,6 +421,7 @@
                 <button
                     v-if="undoRedo"
                     v-tooltip="__('tiptap::tiptap.undo')"
+                    :aria-label="__('tiptap::tiptap.undo')"
                     @click="editor.chain().focus().undo().run()"
                     class="button"
                 >
@@ -410,6 +433,7 @@
                 <button
                     v-if="undoRedo"
                     v-tooltip="__('tiptap::tiptap.redo')"
+                    :aria-label="__('tiptap::tiptap.redo')"
                     @click="editor.chain().focus().redo().run()"
                     class="button"
                 >
