@@ -17,7 +17,7 @@ class TiptapFormfield extends Formfield
         return 'Tiptap';
     }
 
-    public function browse($input)
+    public function browse(mixed $input): mixed
     {
         return Str::limit(strip_tags($input), $this->options->display_length ?? 150);
     }
