@@ -18,6 +18,8 @@
         :textAlign="textAlign"
         :horizontalRule="horizontalRule"
         :undoRedo="undoRedo"
+
+        class="mb-2"
     />
     <collapsible title="Options">
         <div class="flex space-x-2">

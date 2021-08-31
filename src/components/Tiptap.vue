@@ -181,12 +181,12 @@
                             <path d="M5 4h4" />
                         </svg>
                     </button>
-                    <collapse-x-transition>
-                        <div v-if="headingOpen" class="inline-flex">
+                    <CollapseXTransition>
+                        <div v-if="headingOpen" class="mx-1 inline-flex space-x-1">
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 1`"
-                                :aria-label="`${__('tiptap::tiptap.header')} 1`"
+                                :aria-label="`${__('tiptap::tiptap.heading')} 1`"
                                 @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 1 }) }"
                             >
@@ -205,7 +205,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 2`"
-                                :aria-label="`${__('tiptap::tiptap.header')} 2`"
+                                :aria-label="`${__('tiptap::tiptap.heading')} 2`"
                                 @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 2 }) }"
                             >
@@ -224,7 +224,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 3`"
-                                :aria-label="`${__('tiptap::tiptap.header')} 3`"
+                                :aria-label="`${__('tiptap::tiptap.heading')} 3`"
                                 @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 3 }) }"
                             >
@@ -244,7 +244,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 4`"
-                                :aria-label="`${__('tiptap::tiptap.header')} 4`"
+                                :aria-label="`${__('tiptap::tiptap.heading')} 4`"
                                 @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 4 }) }"
                             >
@@ -263,7 +263,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 5`"
-                                :aria-label="`${__('tiptap::tiptap.header')} 5`"
+                                :aria-label="`${__('tiptap::tiptap.heading')} 5`"
                                 @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 5 }) }"
                             >
@@ -282,7 +282,7 @@
                             <button
                                 class="button"
                                 v-tooltip="`${__('tiptap::tiptap.heading')} 6`"
-                                :aria-label="`${__('tiptap::tiptap.header')} 6`"
+                                :aria-label="`${__('tiptap::tiptap.heading')} 6`"
                                 @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
                                 :class="{ 'accent': editor.isActive('heading', { level: 6 }) }"
                             >
@@ -300,7 +300,7 @@
                                 </svg>
                             </button>
                         </div>
-                    </collapse-x-transition>
+                    </CollapseXTransition>
                 </span>
 
                 <span v-if="textAlign">
@@ -312,8 +312,8 @@
                             <line x1="6" y1="18" x2="18" y2="18" />
                         </svg>
                     </button>
-                    <collapse-x-transition>
-                        <div v-if="alignOpen" class="inline-flex">
+                    <CollapseXTransition>
+                        <div v-if="alignOpen" class="inline-flex mx-1 space-x-1">
                             <button
                                 class="button"
                                 v-tooltip="__('tiptap::tiptap.left')"
@@ -386,7 +386,7 @@
                                 </svg>
                             </button>
                         </div>
-                    </collapse-x-transition>
+                    </CollapseXTransition>
                 </span>
 
                 <button
@@ -617,6 +617,10 @@ export default {
             editable: !this.disabled,
         }).on('update', ({ editor }) => {
             this.$emit('update:modelValue', editor.getHTML());
+        });
+
+        this.$watch(() => this.maxChars, () => {
+            // TODO: Manipulate the editors character-count plugin
         });
     },
     beforeUnmount() {
