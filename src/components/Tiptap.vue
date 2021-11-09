@@ -576,10 +576,12 @@ export default {
     computed: {
         extensions() {
             let extensions = [
-                StarterKit,
+                StarterKit.configure({
+                    orderedList: false,
+                    bulletList: false,
+                }),
                 Underline,
                 TextAlign,
-                CodeBlock,
                 OrderedList.configure({
                     class: 'inline-flex'
                 }),
