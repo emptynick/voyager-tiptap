@@ -14,7 +14,6 @@
             "Emptynick\\Tiptap\\": "src/"
         }
     },
-    "minimum-stability": "stable",
     "extra": {
         "laravel": {
             "providers": [
