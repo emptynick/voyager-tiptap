@@ -20,5 +20,8 @@
                 "Emptynick\\Tiptap\\TiptapServiceProvider"
             ]
         }
+    },
+    "require": {
+        "voyager-admin/voyager": "2.x-dev"
     }
 }
