@@ -450,7 +450,7 @@
             @click="headingOpen = false; alignOpen = false;"
         />
         <div v-if="editor && maxChars > 0" class="w-full" :class="charPercentage > 90 ? 'text-red-500' : (charPercentage > 75 ? 'text-yellow-500' : null)">
-            {{ __('tiptap::tiptap.character_count', { chars: editor.getCharacterCount(), max: maxChars }) }}
+            {{ __('tiptap::tiptap.character_count', { chars: editor.storage.characterCount.characters(), max: maxChars }) }}
         </div>
     </div>
 </template>
@@ -604,7 +604,7 @@ export default {
                 this.editor.isActive({ textAlign: 'justify' });
         },
         charPercentage() {
-            return Math.round((100 / this.maxChars) * this.editor.getCharacterCount())
+            return Math.round((100 / this.maxChars) * this.editor.storage.characterCount.characters())
         },
     },
     mounted() {
